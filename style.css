@@ -1,0 +1,108 @@
+body header .header-rule {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin-top: 10px;
+}
+body header .btn {
+  padding: 8px 16px;
+  margin-right: 10px;
+  background-color: #e6e6e6;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+body header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body header nav .navbar-left {
+  display: flex;
+}
+body header nav .navbar-center .logo {
+  max-width: 120px;
+}
+body header nav .navbar-right {
+  display: flex;
+}
+body header .modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+body header .modal .modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: #f7f7f7;
+}
+body header .modal .modal-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+body header .modal .modal-close {
+  border: none;
+  background-color: transparent;
+  font-size: 24px;
+  cursor: pointer;
+}
+body header .modal .modal-body {
+  padding: 16px;
+  background-color: #fff;
+}
+body header .modal input,
+body header .modal textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+body header .modal .btn {
+  padding: 8px 16px;
+  margin-right: 10px;
+  background-color: #e6e6e6;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+body .project-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Divide the container into two columns */
+  grid-template-rows: 1fr; /* Set a single row */
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #000;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+body .project-details {
+  grid-column: 1; /* Place the div in the first column */
+  grid-row: 1; /* Place the div in the first row */
+  text-align: left;
+  padding: 10px;
+}
+body .project-image {
+  grid-column: 2; /* Place the div in the second column */
+  grid-row: 1; /* Place the div in the first row */
+  padding: 10px;
+  text-align: center;
+}
+body .project-image img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+body .footer {
+  grid-column: 1/span 2; /* Span across both columns */
+  background-color: #f1f1f1;
+  padding: 10px;
+}/*# sourceMappingURL=style.css.map */

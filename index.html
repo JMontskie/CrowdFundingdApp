@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Kickstarter</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./index.js"></script>
+</head>
+<body>
+    <header>
+      
+        <nav class="navbar">
+          <div class="navbar-left">
+            <button class="btn" onclick="openExploreModal()">Explore</button>
+            <button class="btn" onclick="openModal()">Start a Project</button>
+          </div>
+          <div class="navbar-center">
+            <img src="./img/Kickstarter-Logo.png" alt="Kickstarter Logo" class="logo">
+          </div>
+          <div class="navbar-right">
+            <button class="btn">Connect Wallet</button>
+          </div>
+        </nav>
+
+        <div class="modal" id="projectModal">
+            <div class="modal-header">
+              <span class="modal-title">Project Creation</span>
+              <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <label for="projectTitle">Title:</label>
+                <input type="text" id="projectTitle" required>
+          
+                <label for="projectDescription">Description:</label>
+                <textarea id="projectDescription" rows="4" required></textarea>
+          
+                <label for="goalAmount">Goal Amount:</label>
+                <input type="number" id="goalAmount" required>
+          
+                <label for="duration">Duration (in days):</label>
+                <input type="number" id="duration" required>
+          
+                <button class="btn" onclick="submitProject()">Submit</button>
+              </form>
+            </div>
+        </div>
+
+        <div class="modal" id="exploreModal">
+          <div class="modal-header">
+            <span class="modal-title">Explore Projects</span>
+            <button class="modal-close" onclick="closeExploreModal()">&times;</button>
+          </div>
+          <div class="modal-body">
+            <label for="projectID">Project ID:</label>
+            <input type="text" id="projectID">
+            <button class="btn" onclick="searchProject()">Search</button>
+          </div>
+        </div>
+
+        <hr class="header-rule">
+    </header>
+
+    <div class="project-container">
+      <div class="project-image">
+        <img src="./img/placeholder-image.png" alt="Project Image">
+      </div>
+      <div class="project-details" id="projectDetails">
+        <!-- Display project details here -->
+        <h2>Welcome to FakeKickStarter!</h2>
+        <p>To Get Started, Click Start a Project</p>
+        <p>To view existing projects, click Explore</p>
+        <p>Thanks for taking your time to explore the site!</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <!-- Footer content -->
+    </div>
+</body>
+</html>
