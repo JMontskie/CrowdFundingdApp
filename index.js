@@ -1,7 +1,3 @@
-// Add an event listener to the submit button
-// var submitButton = document.getElementById('submitBtn');
-// submitButton.addEventListener('click', handleSubmit);
-
 function openModal() {
     document.getElementById("projectModal").style.display = "block";
   }
