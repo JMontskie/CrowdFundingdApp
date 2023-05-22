@@ -6,79 +6,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fake Kickstarter</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
     <script src="./index.js"></script>
 </head>
 <body>
-    <header>
-      
-        <nav class="navbar">
-          <div class="navbar-left">
-            <button class="btn" onclick="openExploreModal()">Explore</button>
-            <button class="btn" onclick="openModal()">Start a Project</button>
-          </div>
-          <div class="navbar-center">
-            <img src="./img/Kickstarter-Logo.png" alt="Kickstarter Logo" class="logo">
-          </div>
-          <div class="navbar-right">
-            <button class="btn">Connect Wallet</button>
-          </div>
-        </nav>
-
-        <div class="modal" id="projectModal">
-            <div class="modal-header">
-              <span class="modal-title">Project Creation</span>
-              <button class="modal-close" onclick="closeModal()">&times;</button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <label for="projectTitle">Title:</label>
-                <input type="text" id="projectTitle" required>
-          
-                <label for="projectDescription">Description:</label>
-                <textarea id="projectDescription" rows="4" required></textarea>
-          
-                <label for="goalAmount">Goal Amount:</label>
-                <input type="number" id="goalAmount" required>
-          
-                <label for="duration">Duration (in days):</label>
-                <input type="number" id="duration" required>
-          
-                <button class="btn" onclick="submitProject()">Submit</button>
-              </form>
-            </div>
+  <div class="page-container">
+    
+    <header class="header">
+      <nav class="navbar">
+        <div class="navbar-left">
+          <button class="btn" onclick="openExploreModal()">Explore</button>
+          <button class="btn" onclick="openModal()">Start a Project</button>
         </div>
+        <div class="navbar-center">
+          <img src="./img/Kickstarter-Logo.png" alt="Kickstarter Logo" class="logo">
+        </div>
+        <div class="navbar-right">
+          <button class="btn">Connect Wallet</button>
+        </div>
+      </nav>
 
-        <div class="modal" id="exploreModal">
+      <div class="modal" id="projectModal">
           <div class="modal-header">
-            <span class="modal-title">Explore Projects</span>
-            <button class="modal-close" onclick="closeExploreModal()">&times;</button>
+            <span class="modal-title">Project Creation</span>
+            <button class="modal-close" onclick="closeModal()">&times;</button>
           </div>
           <div class="modal-body">
-            <label for="projectID">Project ID:</label>
-            <input type="text" id="projectID">
-            <button class="btn" onclick="searchProject()">Search</button>
+            <form id="projectModalForm">
+              <label for="projectTitle">Title:</label>
+              <input type="text" id="projectTitle" name="projectTitle" required>
+        
+              <label for="projectDescription">Description:</label>
+              <textarea id="projectDescription" name="projectDescription" rows="4" required></textarea>
+        
+              <label for="goalAmount">Goal Amount:</label>
+              <input type="number" id="goalAmount" name="goalAmount" required>
+        
+              <label for="duration">Duration (in days):</label>
+              <input type="number" id="duration" name="duration" required>
+        
+              <button class="btn" type="button" id="submitBtn" onclick="handleSubmit()">Submit</button>
+            </form>
           </div>
-        </div>
+      </div>
 
-        <hr class="header-rule">
-    </header>
+      <div class="modal" id="exploreModal">
+        <div class="modal-header">
+          <span class="modal-title">Explore Projects</span>
+          <button class="modal-close" onclick="closeExploreModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+          <label for="exploreProjectId">Project ID:</label>
+          <input type="text" id="exploreProjectId" name="exploreProjectId" required>
+          <button class="btn"  id="exploreSubmitBtn" onclick="searchProject()">Search</button>
+        </div>
+      </div>
+
+      <hr class="header-rule">
+  </header>
 
     <div class="project-container">
-      <div class="project-image">
-        <img src="./img/placeholder-image.png" alt="Project Image">
-      </div>
-      <div class="project-details" id="projectDetails">
-        <!-- Display project details here -->
-        <h2>Welcome to FakeKickStarter!</h2>
-        <p>To Get Started, Click Start a Project</p>
-        <p>To view existing projects, click Explore</p>
-        <p>Thanks for taking your time to explore the site!</p>
+      <div class="project-content">
+        <div class="project-image">
+          <img src="./img/placeholder-image.png" alt="Project Image">
+        </div>
+        <div class="project-details" id="projectDetails">
+          <!-- Display project details here -->
+          <h2>Welcome to FakeKickStarter!</h2>
+          <p>To Get Started, Click Start a Project</p>
+          <p>To view existing projects, click Explore</p>
+          <p>Thanks for taking your time to explore the site!</p>
+        </div>
       </div>
     </div>
 
-    <div class="footer">
-      <!-- Footer content -->
-    </div>
+    <!-- <footer class="footer">
+      <div class="placeholder">
+        <span><i class="fas fa-info"></i></span>
+        <span>Wallet Address: <span id="walletAddress">0x0000</span></span>
+      </div>
+      <div class="placeholder">
+        <span><i class="fas fa-balance-scale"></i></span>
+        <span>Current Balance: <span id="currentBalance">0</span></span>
+      </div>
+      <div class="placeholder">
+        <span><i class="far fa-flag"></i></span>
+        <span>Completed: <span id="completed">No</span></span>
+      </div>
+      <div class="placeholder">
+        <span><i class="fas fa-map-pin"></i></span>
+        <span>Duration: <span id="duration">29 days left</span></span>
+      </div>
+    </footer> -->
+
+    <footer class="footer">
+      <div class="footer-placeholder">
+        <i class="fas fa-wallet"></i> Wallet Address: <span id="walletAddress">0x0000</span>
+      </div>
+      <div class="footer-placeholder">
+        <i class="fas fa-balance-scale"></i> Current Balance: <span id="currentBalance">0</span>
+      </div>
+      <div class="footer-placeholder">
+        <i class="far fa-flag"></i> Completed: <span id="completed">No</span>
+      </div>
+      <div class="footer-placeholder">
+        <i class="fas fa-map-pin"></i> Duration: <span id="duration">29 days left</span>
+      </div>
+    </footer>
+    <footer class="footer-display">
+      <div class="footer-placeholder">
+        <i class="fas fa-copyright"></i> FakeKickstarter 2023
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
