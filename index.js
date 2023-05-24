@@ -1,6 +1,6 @@
 function openModal() {
-    document.getElementById("projectModal").style.display = "block";
-  }
+  document.getElementById("projectModal").style.display = "block";
+}
   
 function closeModal() {
 document.getElementById("projectModal").style.display = "none";
@@ -100,5 +100,24 @@ function searchProject() {
 }
 
 // footer functions
-var footerPlaceholder = document.querySelector('.footer-placeholder');
-footerPlaceholder.innerHTML = '<i class="fas fa-copyright"></i> FakeKickstarter 2023';
+
+
+// IMPORTANT FUNCTIONS FOR US TO CONNECT TO THE BLOCKCHAIN
+
+
+// Connect to the blockchain using wallet
+let signer;
+
+async function connectWallet() {
+  const provider = new ethers.providers.Web3Provider(window.ethereum);
+  provider.send("eth_requestAccounts", [])
+  .then( () => {
+    provider.listAccounts().then((accounts) => {
+      signer = provider.getSigner(accounts[0]);
+      document.getElementById('walletBtn').innerHTML = accounts[0].slice(0, 4) + '...' + accounts[0].slice(38, 42);
+    });
+  }).catch((err) => {
+    console.error(err);
+  })
+}
+

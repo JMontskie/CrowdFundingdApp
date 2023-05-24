@@ -5,7 +5,7 @@ body, html {
 }
 body .page-container, html .page-container {
   display: grid;
-  grid-template-rows: 10% 70% 20%; /* Set the row sizes */
+  grid-template-rows: 10% 80% 10%; /* Set the row sizes */
   height: 100%;
 }
 body .page-container header .header, html .page-container header .header {
@@ -35,7 +35,7 @@ body .page-container header nav .navbar-left, html .page-container header nav .n
   display: flex;
 }
 body .page-container header nav .navbar-center .logo, html .page-container header nav .navbar-center .logo {
-  max-width: 120px;
+  max-width: 150px;
 }
 body .page-container header nav .navbar-right, html .page-container header nav .navbar-right {
   display: flex;
@@ -159,7 +159,6 @@ body .page-container .project-image img, html .page-container .project-image img
 body .page-container .footer-display, html .page-container .footer-display {
   display: block;
   width: 100%;
-  height: 50px;
   background-color: #f0f0f0;
   color: #555;
   font-size: 14px;
@@ -169,7 +168,6 @@ body .page-container .footer-display, html .page-container .footer-display {
 body .page-container .footer, html .page-container .footer {
   display: none;
   width: 100%;
-  height: 50px;
   background-color: #f0f0f0;
   color: #555;
   font-size: 14px;

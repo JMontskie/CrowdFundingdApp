@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fake Kickstarter</title>
 
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
     <script src="./index.js"></script>
 </head>
 <body>
@@ -23,7 +25,7 @@
           <img src="./img/Kickstarter-Logo.png" alt="Kickstarter Logo" class="logo">
         </div>
         <div class="navbar-right">
-          <button class="btn">Connect Wallet</button>
+          <button class="btn" id="walletBtn" onclick="connectWallet()">Connect Wallet</button>
         </div>
       </nav>
 
